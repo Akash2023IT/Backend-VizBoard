@@ -1,0 +1,42 @@
+# Backend Folder Explanation
+
+## 1. backend/config/db.js
+- Imports necessary libraries and sets up the database connection using Mongoose.
+- Configures middleware and routes for the application.
+- Connects to MongoDB and starts the server.
+
+## 2. backend/config/jwt.js
+- Handles JSON Web Token (JWT) configurations.
+- Provides functions to generate and verify tokens.
+
+## 3. backend/config.js
+- Contains general configuration settings for the backend application.
+- Includes database connection URI and JWT secret.
+
+## 4. backend/middleware/auth.js
+- Middleware for authenticating requests.
+- Verifies JWT and checks if the user is authenticated.
+
+## 5. backend/models/User.js
+- Defines the User model with fields for username and password.
+- Hashes passwords before saving them to the database.
+
+## 6. backend/models/Project.js
+- Defines the Project model with fields for title and description.
+- Automatically adds timestamps for creation and updates.
+
+## 7. backend/models/Task.js
+- Defines the Task model with fields for title, description, deadline, priority, and associated project.
+- Automatically adds timestamps for creation and updates.
+
+## 8. backend/routes/auth.js
+- Handles user registration and login routes.
+- Protects routes with authentication middleware.
+
+## 9. backend/routes/Projects.js
+- Handles routes for creating and retrieving projects.
+- Protects routes with authentication middleware.
+
+## 10. backend/routes/tasks.js
+- Handles routes for creating and retrieving tasks associated with projects.
+- Protects routes with authentication middleware.

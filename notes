@@ -1,0 +1,97 @@
+I'll help you understand the structure and functionality of this application. Let me break it down into the main components:
+Backend Structure
+
+Server Setup (backend/server.js & backend/config/db.js)
+
+Express server configuration
+MongoDB connection setup
+CORS configuration for frontend communication
+Route handling for authentication, projects, and tasks
+
+2. Authentication (backend/config/jwt.js & backend/middleware/auth.js)
+JWT token generation and verification
+Authentication middleware to protect routes
+Token expiration set to 24 hours
+
+Models
+
+User Model (backend/models/User.js)
+Username and password fields
+Password hashing using bcrypt
+
+Project Model (backend/models/Project.js)
+
+Name and userId fields
+Timestamps for creation
+
+Task Model (backend/models/Task.js)
+
+Title, description, status, priority
+Project and user associations
+Status options: todo, inProgress, done
+Priority options: low, medium, high
+
+Routes
+
+Auth Routes (backend/routes/Auth.js)
+User registration and login endpoints
+JWT token generation
+
+Project Routes (backend/routes/Projects.js)
+
+CRUD operations for projects
+Protected by auth middleware
+Task Routes (backend/routes/tasks.js)
+CRUD operations for tasks
+Project-specific task management
+Protected by auth middleware
+Frontend Structure (src)
+Main Components
+App (src/App.jsx)
+Main routing setup
+Authentication context provider
+Project and Task context providers
+2. Authentication
+Login & Signup Components
+User authentication forms
+JWT token storage
+Navigation handling
+Dashboard
+KanbanBoard Component
+Drag-and-drop task management
+Column-based task organization (Todo, In Progress, Done)
+Task creation and updates
+Task Management
+Task Component
+Individual task display
+Priority indicators
+Status management
+Styling
+CSS modules for component-specific styling
+Responsive design considerations
+Custom scrollbar styling
+Key Features
+Authentication
+Secure user registration and login
+JWT-based authentication
+Protected routes
+Project Management
+Create and manage multiple projects
+Project-specific task organization
+User-specific project views
+Task Management
+Kanban board interface
+Drag-and-drop functionality
+Priority levels and status tracking
+Task creation and deletion
+UI/UX
+Responsive design
+Modern styling with gradients and animations
+Intuitive navigation
+Modal forms for task creation
+Data Flow
+User authenticates → JWT token stored
+Token used for subsequent API requests
+Projects loaded based on user ID
+Tasks organized by project and status
+Real-time updates through context providers
